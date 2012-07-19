@@ -15,4 +15,4 @@
 .svn/
 
 ### Vim
-*.swp
+.*.sw[a-z]
