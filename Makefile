@@ -20,7 +20,9 @@ oh-my-zsh:
 ifeq ($(OHMYZSH_IS_INSTALLED),yes)
 	@echo "oh-my-zsh seems to be already installed, good!"
 else
-	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	git submodule init
+	git submodule update
+	ln -s $(PWD)/oh-my-zsh $(HOME)/.oh-my-zsh
 endif
 
 .PHONY: zsh
