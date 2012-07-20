@@ -30,15 +30,14 @@ zsh: oh-my-zsh
 	ln -s $(PWD)/zshrc.mac $(HOME)/.zshrc.mac
 	ln -s $(PWD)/zshrc.linux $(HOME)/.zshrc.linux
 
-
 .PHONY: clean
 clean:
-	rm -iv $(HOME)/.vim
-	rm -iv $(HOME)/.vimrc
-	rm -iv $(HOME)/.gitconfig
-	rm -iv $(HOME)/.gitignore
-	rm -iv $(HOME)/.zshrc
-	rm -iv $(HOME)/.zshrc.aliases
-	rm -iv $(HOME)/.zshrc.mac
-	rm -iv $(HOME)/.zshrc.linux
+	rm -vf $(HOME)/.vim
+	rm -vf $(HOME)/.vimrc
+	rm -vf $(HOME)/.gitconfig
+	rm -vf $(HOME)/.gitignore
+	rm -vf $(HOME)/.zshrc
+	rm -vf $(HOME)/.zshrc.aliases
+	rm -vf $(HOME)/.zshrc.mac
+	rm -vf $(HOME)/.zshrc.linux
 
