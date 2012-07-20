@@ -1,0 +1,5 @@
+export ZSHRCLOADS="$ZSHRCLOADS .zshrc.linux"
+
+# Personal PATH stuff
+export PATH=$HOME/bin:$PATH
+

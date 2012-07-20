@@ -1,0 +1,13 @@
+export ZSHRCLOADS="$ZSHRCLOADS .zshrc.mac"
+
+# Personal PATH stuff
+export PATH=$HOME/Bin:$PATH
+
+# Homebrew
+export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+
+# autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+    . `brew --prefix`/etc/autojump
+fi
