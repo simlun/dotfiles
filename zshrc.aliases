@@ -2,3 +2,4 @@ export ZSHRCLOADS="$ZSHRCLOADS .zshrc.aliases"
 
 alias py=python
 alias reload="source ~/.zshrc"
+alias please='eval "fc -lnr | head -n 1" | xargs sudo'
