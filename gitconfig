@@ -17,7 +17,7 @@
     wc = whatchanged --abbrev-commit --date=relative --date-order --pretty='format:%Cgreen%h %Cblue%ar %Credby %an%Creset -- %s' -n 45
     logp = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --patch-with-stat $@; }; f"
     logs = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --stat --no-merges $@; }; f"
-    glog = log --graph --all --branches --date-order
+    logg = log --graph --all --branches --date-order
     oneline = log --date-order --pretty='format:%Cgreen%h %Cblue%ai %Creset-- %s'
  
     # search
