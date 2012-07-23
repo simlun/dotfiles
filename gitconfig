@@ -9,37 +9,19 @@
     path = ~/.gitconfig.local
  
 [alias]
-    # basic shortcuts
-    a = add
-    aa = add -A
-    b = branch -avv
-    t = tag
-    d = diff
+     d = diff
     dw = diff --color-words
     ds = diff --staged
-    ci = commit -v
-    cia = commit -va
-    co = checkout
-    st   = status
-    unstage = reset HEAD --
  
     # log commands
     wc = whatchanged --abbrev-commit --date=relative --date-order --pretty='format:%Cgreen%h %Cblue%ar %Credby %an%Creset -- %s' -n 45
     logp = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --patch-with-stat $@; }; f"
     logs = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --stat --no-merges $@; }; f"
     glog = log --graph --all --branches --date-order
-    # oneline = log --date-order --pretty='format:%Cgreen%h %Cblue%ar %Credby %an%Creset -- %s'
     oneline = log --date-order --pretty='format:%Cgreen%h %Cblue%ai %Creset-- %s'
  
     # search
     search = "!f() { A1=$1; shift; git logp -S\"$A1\" $@; }; f"
- 
-    # git svn
-    spull = svn rebase
-    spush = svn dcommit
- 
-    # rebasing pull
-    rpull = pull --rebase --verbose --stat
  
 [format]
     pretty=%C(yellow)commit: %h%Cblue%d%Creset%nAuthor: %an%nDate:   %ad%n%n%w(0,4,4)%s%n%b
