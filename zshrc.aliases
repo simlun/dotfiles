@@ -2,3 +2,6 @@ export ZSHRCLOADS="$ZSHRCLOADS .zshrc.aliases"
 
 alias py=python
 alias reload="source ~/.zshrc"
+
+alias gd='git diff'
+
