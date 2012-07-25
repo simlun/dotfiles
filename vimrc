@@ -1,3 +1,18 @@
+""" Plugins
+" Pathogen Plugin
+" https://github.com/tpope/vim-pathogen
+call pathogen#infect()
+" VimClojure Plugin
+" https://github.com/vim-scripts/VimClojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
+let vimclojure#SplitPos = "right"
+
 """ Tab key
 set expandtab
 set tabstop=4
@@ -23,9 +38,9 @@ call MapCR()
 set ignorecase smartcase
 
 """ Theme
+syntax enable
 set background=dark
-colorscheme koehler
-syntax on
+colorscheme solarized
 " Enable line numbering
 set number
 " Always show the status line
@@ -73,17 +88,3 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-""" Plugins
-" Pathogen Plugin
-" https://github.com/tpope/vim-pathogen
-call pathogen#infect()
-" VimClojure Plugin
-" https://github.com/vim-scripts/VimClojure
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
-let vimclojure#SplitPos = "right"
