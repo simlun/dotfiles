@@ -7,3 +7,4 @@ alias please='eval "fc -lnr | head -n 1" | xargs sudo'
 # Shortcuts
 alias py=python
 alias gd='git diff'
+alias gf='git fetch'
