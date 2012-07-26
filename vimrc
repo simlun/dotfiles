@@ -45,9 +45,10 @@ colorscheme solarized
 set number
 " Always show the status line
 set laststatus=2
-" Hide GUI toolbar
+" Hide GUI toolbar and set font
 if has("gui_running")
   set guioptions-=T
+  set guifont=Menlo\ Bold:h12
 endif
 " Always show tab line
 set showtabline=2
