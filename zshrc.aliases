@@ -11,3 +11,5 @@ alias py=python
 alias gd='git diff'
 alias gf='git fetch'
 alias gaa='git add -A'
+alias gerrit-push-for-master='git push origin HEAD:refs/for/master'
+
