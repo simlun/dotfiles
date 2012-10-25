@@ -549,12 +549,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles/iterm2</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -577,11 +573,21 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 110 924 485 0 0 1440 878 </string>
+	<string>269 283 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 502 570 376 0 0 1440 878 </string>
+	<string>155 1128 570 376 -92 900 1600 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>183 68 570 376 0 0 1440 878 </string>
+	<string>572 275 640 586 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>3 0 570 376 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>108 80 941 502 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>494 125 570 376 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>309 410 570 376 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>330 387 570 376 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_6EE11EC1-C788-4126-B3CC-5B605A626817</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -774,7 +780,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>90</integer>
 			<key>Command</key>
 			<string>/bin/zsh</string>
 			<key>Cursor Color</key>
@@ -1141,7 +1147,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>40</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -1366,7 +1372,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-08-18T13:05:11Z</date>
+	<date>2012-10-24T19:22:18Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
