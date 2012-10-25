@@ -17,3 +17,8 @@
 
 ### Vim
 .*.sw[a-z]
+
+## For vim plugin repos only
+## Ignoring the generated helptags
+## Note: this ignore might be a bit risky?
+/doc/tags
