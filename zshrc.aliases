@@ -9,6 +9,7 @@ alias l='ls -l'
 alias ll='ls -la'
 alias py=python
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gf='git fetch'
 alias gaa='git add -A'
 alias gerrit-push-for-master='git push origin HEAD:refs/for/master'
