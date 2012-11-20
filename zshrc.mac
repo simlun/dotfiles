@@ -11,3 +11,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 if [ -f `brew --prefix`/etc/autojump ]; then
     . `brew --prefix`/etc/autojump
 fi
+
+# Set locale
+export LANG=en_US.UTF-8
+
