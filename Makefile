@@ -2,7 +2,7 @@ PWD := $(shell pwd)
 OHMYZSH_IS_INSTALLED := $(shell [ -e ~/.oh-my-zsh ] && echo yes || echo no)
 
 .PHONY: all
-all: vim git zsh
+all: vim git zsh tmux
 
 .PHONY: vim
 vim:
@@ -32,6 +32,11 @@ zsh: oh-my-zsh
 	ln -s $(PWD)/zshrc.mac $(HOME)/.zshrc.mac
 	ln -s $(PWD)/zshrc.linux $(HOME)/.zshrc.linux
 
+.PHONY: tmux
+tmux:
+	ln -s $(PWD)/tmux.conf $(HOME)/.tmux.conf
+
+# TODO: Make this clean target safer! Ask first?
 .PHONY: clean
 clean:
 	rm -vf $(HOME)/.vim
@@ -42,4 +47,5 @@ clean:
 	rm -vf $(HOME)/.zshrc.aliases
 	rm -vf $(HOME)/.zshrc.mac
 	rm -vf $(HOME)/.zshrc.linux
+	rm -vf $(HOME)/.tmux.conf
 
