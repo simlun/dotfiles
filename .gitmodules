@@ -13,3 +13,6 @@
 [submodule "vim/bundle/paredit.vim"]
 	path = vim/bundle/paredit.vim
 	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "tmux-colors-solarized"]
+	path = tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git

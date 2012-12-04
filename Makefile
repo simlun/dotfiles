@@ -34,7 +34,8 @@ zsh: oh-my-zsh
 
 .PHONY: tmux
 tmux:
-	ln -s $(PWD)/tmux.conf $(HOME)/.tmux.conf
+	cat $(PWD)/tmux.conf > $(HOME)/.tmux.conf
+	cat $(PWD)/tmux-colors-solarized/tmuxcolors-light.conf >> $(HOME)/.tmux.conf
 
 # TODO: Make this clean target safer! Ask first?
 .PHONY: clean
