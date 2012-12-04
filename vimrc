@@ -75,6 +75,8 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+" Try the following encodings from left to right when opening files
+set fileencodings=utf-8,latin1
 
 " Multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
