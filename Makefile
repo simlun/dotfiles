@@ -28,6 +28,7 @@ endif
 .PHONY: zsh
 zsh: oh-my-zsh
 	ln -s $(PWD)/zshrc $(HOME)/.zshrc
+	ln -s $(PWD)/zshrc.global $(HOME)/.zshrc.global
 	ln -s $(PWD)/zshrc.aliases $(HOME)/.zshrc.aliases
 	ln -s $(PWD)/zshrc.mac $(HOME)/.zshrc.mac
 	ln -s $(PWD)/zshrc.linux $(HOME)/.zshrc.linux

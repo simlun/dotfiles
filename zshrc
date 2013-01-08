@@ -38,8 +38,8 @@ plugins=(git python django)
 source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
-# Global Aliases
-source $HOME/.zshrc.aliases
+# Global Config
+source $HOME/.zshrc.global
 
 # OS Specific Config
 if [ "$(uname)" = "Darwin" ]; then

@@ -1,0 +1,7 @@
+export ZSHRCLOADS="$ZSHRCLOADS .zshrc.global"
+
+# Global Aliases
+source $HOME/.zshrc.aliases
+
+export EDITOR=vim
+
