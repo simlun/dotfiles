@@ -50,7 +50,15 @@ if [ "$(uname)" = "Linux" ]; then
 fi
 
 # Hostname Specific Config
-HOSTCFG=$HOME/.zshrc.$(hostname)
+HOSTNAME=$(hostname)
+
+# Special case for KTH hostnames
+IS_IT_A_KTH_HOSTNAME=$(hostname | grep "kthopen.kth.se" | wc -l | cut -d ' ' -f 8)
+if [ "$IS_IT_A_KTH_HOSTNAME" -eq "1" ]; then
+    HOSTNAME="simonl-air.local"
+fi
+
+HOSTCFG=$HOME/.zshrc.$HOSTNAME
 if [ -f $HOSTCFG ]; then
     source $HOSTCFG
 fi
