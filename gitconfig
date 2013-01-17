@@ -20,6 +20,8 @@
     log1 = "log --oneline --relative-date --pretty=format:\"%Cgreen%h%Creset by %Cred%an%Creset, %ai: %s\""
     lognew = log --oneline --summary --stat HEAD..origin/master
     lognewp = log --oneline --summary --stat -p HEAD..origin/master
+
+    unstage = reset HEAD
  
     # search
     search = "!f() { A1=$1; shift; git logp -S\"$A1\" $@; }; f"
