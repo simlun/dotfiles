@@ -8,6 +8,7 @@ alias please='eval "fc -lnr | head -n 1" | xargs sudo'
 alias l='ls -l'
 alias ll='ls -la'
 alias py=python
+alias ip=ipython
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gf='git fetch'
