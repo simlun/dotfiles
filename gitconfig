@@ -50,3 +50,6 @@
     added = green
     changed = magenta
     untracked = reverse
+
+[push]
+	default = simple
