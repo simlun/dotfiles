@@ -18,3 +18,6 @@ alias gaa='git add -A'
 alias gr='git rebase'
 alias gerrit-push-for-master='git push origin HEAD:refs/for/master'
 
+alias cleanterm='deactivate; cd; clear'
+alias ct=cleanterm
+
