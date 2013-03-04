@@ -16,3 +16,6 @@
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "vim/bundle/linediff.vim"]
+	path = vim/bundle/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim.git
