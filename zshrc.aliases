@@ -17,6 +17,7 @@ alias gf='git fetch'
 alias gaa='git add --all :/'
 alias gr='git rebase'
 alias gerrit-push-for-master='git push origin HEAD:refs/for/master'
+alias gerrit-push-drafts-master='git push origin HEAD:refs/drafts/master'
 
 alias cleanterm='deactivate; cd; clear'
 alias ct=cleanterm
