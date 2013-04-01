@@ -7,9 +7,6 @@ export PATH=$HOME/Bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# autojump
-#[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
 # Set locale
 export LANG=en_US.UTF-8
 
