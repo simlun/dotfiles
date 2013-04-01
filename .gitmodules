@@ -19,3 +19,6 @@
 [submodule "vim/bundle/linediff.vim"]
 	path = vim/bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
