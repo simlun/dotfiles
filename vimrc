@@ -101,3 +101,10 @@ let g:ctrlp_custom_ignore = {
 " Mouse support
 set mouse=a
 
+" Misc key maps
+map <leader>y "*y
+
+" Visual white space
+set list
+set listchars=eol:⤦,tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
+
