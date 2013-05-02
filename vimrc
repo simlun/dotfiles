@@ -103,8 +103,10 @@ set mouse=a
 
 " Misc key maps
 map <leader>y "*y
+map <leader>p "*p
 
 " Visual white space
 set list
-set listchars=eol:⤦,tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
+"set listchars=eol:⤦,tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
+set listchars=tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
 
