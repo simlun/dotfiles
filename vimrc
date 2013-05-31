@@ -13,6 +13,9 @@ let vimclojure#WantNailgun=0
 "let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
 let vimclojure#SplitPos="right"
 
+" Prevent paredit from putting parens on a new line
+let g:paredit_electric_return = 0
+
 """ Tab key
 set expandtab
 set tabstop=4
