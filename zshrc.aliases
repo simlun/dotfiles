@@ -22,3 +22,14 @@ alias gerrit-push-drafts-master='git push origin HEAD:refs/drafts/master'
 alias cleanterm='deactivate; cd; clear'
 alias ct=cleanterm
 
+repeatedly() {
+    while true; 
+    do
+        "$@"
+        echo "> Hit return to execute:"
+        echo ">" "$@"
+        read
+        clear
+    done
+}
+

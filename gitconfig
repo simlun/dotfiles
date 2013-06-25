@@ -7,11 +7,11 @@
 [merge]
     defaultToUpstream = true
     ff = only
- 
+
 [include]
     # Put machine local configuration here like the [user] variables
     path = ~/.gitconfig.local
- 
+
 [alias]
     # log commands
     logp = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --patch-with-stat $@; }; f"
@@ -22,34 +22,34 @@
     lognewp = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' -p HEAD..origin/master
 
     unstage = reset HEAD
- 
+
     # search
     search = "!f() { A1=$1; shift; git logp -S\"$A1\" $@; }; f"
- 
+
 [format]
     pretty=%C(yellow)commit: %h%Cblue%d%Creset%nAuthor: %an%nDate:   %ad%n%n%w(0,4,4)%s%n%b
- 
+
 [color]
     ui = true
     branch = auto
     diff = auto
     status = auto
- 
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
- 
+
 [color "diff"]
     meta = blue
     frag = magenta
     old = red
     new = green
- 
+
 [color "status"]
     added = green
     changed = magenta
     untracked = reverse
 
 [push]
-	default = simple
+    default = simple
