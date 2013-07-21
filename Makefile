@@ -49,5 +49,6 @@ clean:
 	rm -vf $(HOME)/.zshrc.aliases
 	rm -vf $(HOME)/.zshrc.mac
 	rm -vf $(HOME)/.zshrc.linux
+	rm -vf $(HOME)/.zshrc.global
 	rm -vf $(HOME)/.tmux.conf
 
