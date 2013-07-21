@@ -14,7 +14,8 @@ let vimclojure#WantNailgun=0
 let vimclojure#SplitPos="right"
 
 " Prevent paredit from putting parens on a new line
-let g:paredit_electric_return = 0
+"let g:paredit_electric_return = 0
+" ...nvm... I kind of like that feature
 
 """ Tab key
 set expandtab
