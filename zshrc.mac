@@ -10,3 +10,13 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 # Set locale
 export LANG=en_US.UTF-8
 
+function diff_2_cats {
+    TMP1=$(mktemp -t foo)
+    TMP2=$(mktemp -t bar)
+    echo "Text 1:"
+    cat > $TMP1
+    echo "Text 2:"
+    cat > $TMP2
+    diff $TMP1 $TMP2
+    rm -i $TMP1 $TMP2
+}
