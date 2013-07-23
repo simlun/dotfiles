@@ -20,6 +20,7 @@
     log1 = "log --oneline --relative-date --pretty=format:\"%Cgreen%h%Creset by %Cred%an%Creset, %ai: %s\""
     lognew = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' --stat HEAD..origin/master
     lognewp = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' -p HEAD..origin/master
+    logt = log --topo-order
 
     unstage = reset HEAD
 
