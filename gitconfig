@@ -52,5 +52,5 @@
     changed = magenta
     untracked = reverse
 
-#[push]
-#    default = simple
+[push]
+    default = current
