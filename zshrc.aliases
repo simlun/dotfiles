@@ -16,6 +16,8 @@ alias gdc='git diff --cached'
 alias gf='git fetch'
 alias gaa='git add --all :/'
 alias gr='git rebase'
+alias gs='git stash -u'
+alias gsp='git stash pop'
 
 # Use long versions of these instead
 unalias gp
