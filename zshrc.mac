@@ -4,7 +4,7 @@ export ZSHRCLOADS="$ZSHRCLOADS .zshrc.mac"
 export PATH=$HOME/Bin:$PATH
 
 # Homebrew
-export PATH=/usr/local/share/python:$PATH
+#export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 # Set locale
