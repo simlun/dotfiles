@@ -14,8 +14,8 @@
 
 [alias]
     # log commands
-    logp = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --patch-with-stat $@; }; f"
-    logs = "!f() { LESS='-FRX' GIT_PAGER='less -n +/^commit: ' git log --stat --no-merges $@; }; f"
+    logp = log --patch-with-stat
+    logs = log --stat --no-merges
     logg = log --graph --all --branches --date-order
     log1 = "log --oneline --relative-date --pretty=format:\"%Cgreen%h%Creset by %Cred%an%Creset, %ai: %s\""
     lognew = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' --stat HEAD..origin/master
@@ -23,6 +23,7 @@
     logt = log --topo-order
 
     unstage = reset HEAD
+    ls-untracked = ls-files --other --exclude-standard
 
     # search
     search = "!f() { A1=$1; shift; git logp -S\"$A1\" $@; }; f"
