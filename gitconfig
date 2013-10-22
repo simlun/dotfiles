@@ -6,7 +6,14 @@
 
 [merge]
     defaultToUpstream = true
-    ff = only
+    keepBackup = false
+    tool = p4merge
+
+[mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
 
 [include]
     # Put machine local configuration here like the [user] variables
