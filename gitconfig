@@ -41,6 +41,7 @@
     noff = merge --no-ff
     fa = fetch --all
     pom = push origin master
+    pod = push origin develop
 
 [format]
     pretty=%C(yellow)commit: %h%Cblue%d%Creset%nAuthor: %an%nDate:   %ad%n%n%w(0,4,4)%s%n%b
