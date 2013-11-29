@@ -5,3 +5,6 @@ source $HOME/.zshrc.aliases
 
 export EDITOR=vim
 
+# Disable ZSH autocorrect
+unsetopt correct_all
+

@@ -36,7 +36,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git python autojump)
 
 source $ZSH/oh-my-zsh.sh
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 
 # Global Config
 source $HOME/.zshrc.global
