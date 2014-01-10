@@ -17,6 +17,7 @@
 
 ### Vim
 .*.sw[a-z]
+.sw[a-z]
 
 ## For vim plugin repos only
 ## Ignoring the generated helptags
