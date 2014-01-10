@@ -5,6 +5,8 @@ source $HOME/.zshrc.aliases
 
 export EDITOR=vim
 
+export PATH=$HOME/.dotfiles/bin:$PATH
+
 # Disable ZSH autocorrect
 unsetopt correct_all
 
