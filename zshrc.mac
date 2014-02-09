@@ -7,6 +7,11 @@ export PATH=$HOME/Bin:$PATH
 #export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
+# rbenv
+# $ brew update
+# $ brew install rbenv ruby-build
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+
 # Set locale
 export LANG=en_US.UTF-8
 
