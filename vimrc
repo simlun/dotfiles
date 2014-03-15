@@ -2,16 +2,6 @@
 " Pathogen Plugin
 " https://github.com/tpope/vim-pathogen
 call pathogen#infect()
-" VimClojure Plugin
-" https://github.com/vim-scripts/VimClojure
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun=0
-"let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
-let vimclojure#SplitPos="right"
 
 " Prevent paredit from putting parens on a new line
 "let g:paredit_electric_return = 0
