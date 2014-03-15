@@ -114,3 +114,4 @@ set list
 "set listchars=eol:⤦,tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
 set listchars=tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
 
+command W w
