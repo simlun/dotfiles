@@ -33,7 +33,8 @@ set ignorecase smartcase
 
 """ Theme
 syntax enable
-set background=dark
+"set background=dark
+set background=light
 colorscheme solarized
 " Enable line numbering
 set number
