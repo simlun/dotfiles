@@ -28,6 +28,7 @@
     lognew = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' --stat HEAD..origin/master
     lognewp = log --format='format:%Cgreen%h%Creset, %ai, %Cgreen%an%Creset: %s' -p HEAD..origin/master
     logt = log --topo-order
+    whichmerge = "!f() { git log ${1}..$(git rev-parse --symbolic --abbrev-ref HEAD) --ancestry-path --merges --reverse --oneline | head -n 1; }; f"
 
     unstage = reset HEAD
     ls-untracked = ls-files --other --exclude-standard
