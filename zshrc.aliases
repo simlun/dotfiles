@@ -40,3 +40,7 @@ repeatedly() {
     done
 }
 
+agblame() {
+    query="$1"
+    ag "$query" | (while read line; do (export f="$(echo $line | cut -d : -f 1)"; export l="$(echo $line | cut -d : -f 2)"; git --no-pager blame $f -L $l,+1); done) | grep "$query"
+}
