@@ -12,6 +12,15 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 # $ brew install rbenv ruby-build
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
+# Source virtualenvwrapper (maybe)
+test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
+
+# Pipsi
+export PATH=$HOME/.local/bin:$PATH
+
+# Anaconda
+export PATH=$HOME/anaconda/bin:$PATH
+
 # Set locale
 export LANG=en_US.UTF-8
 
@@ -28,4 +37,5 @@ function diff_2_cats {
 
 # Aliases
 alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+
 
