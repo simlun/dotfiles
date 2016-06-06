@@ -4,7 +4,6 @@ export ZSHRCLOADS="$ZSHRCLOADS .zshrc.mac"
 export PATH=$HOME/Bin:$PATH
 
 # Homebrew
-#export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 # rbenv
@@ -12,18 +11,22 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 # $ brew install rbenv ruby-build
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
-# Source virtualenvwrapper (maybe)
+# Virtualenvwrapper
 test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
 
 # Pipsi
-export PATH=$HOME/.local/bin:$PATH
+test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 
 # Anaconda
-export PATH=$HOME/anaconda/bin:$PATH
+test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
 
 # Set locale
 export LANG=en_US.UTF-8
 
+# Aliases
+alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+
+# Practical functions
 function diff_2_cats {
     TMP1=$(mktemp -t foo)
     TMP2=$(mktemp -t bar)
@@ -34,8 +37,3 @@ function diff_2_cats {
     diff $TMP1 $TMP2
     rm -i $TMP1 $TMP2
 }
-
-# Aliases
-alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
-
-

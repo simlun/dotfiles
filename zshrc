@@ -58,8 +58,8 @@ if [ "$IS_IT_A_KTH_HOSTNAME" -eq "1" ]; then
     HOSTNAME="simonl-air.local"
 fi
 
+# Load per-hostname-specific ZSH config
 HOSTCFG=$HOME/.zshrc.$HOSTNAME
 if [ -f $HOSTCFG ]; then
     source $HOSTCFG
 fi
-
