@@ -33,6 +33,7 @@ alias ip=ipython
 
 alias g='git'
 alias gc='git commit -v'
+alias gca='git commit -va'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gf='git fetch'
