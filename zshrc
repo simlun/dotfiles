@@ -1,45 +1,63 @@
-# This variable is appended to in each sub-.zshrc-file that's sourced. Use
-# it to see which files got loaded: $ echo $ZSHRCLOADS
-export ZSHRCLOADS=".zshrc"
+# Set standard path
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# More paths
+export PATH=$PATH:/usr/X11/bin
+export PATH=$HOME/.dotfiles/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="norm-simlun"
+# Environment
+export LANG=en_US.UTF-8
+export EDITOR=vim
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Disable ZSH autocorrect
+unsetopt CORRECT
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# Helpers
+alias reload="source ~/.zshrc"
+alias please='eval "fc -lnr | head -n 1" | xargs sudo'
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Shortcuts
+alias l='ls -l'
+alias ll='ls -la'
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+alias py=python
+alias ip=ipython
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+alias g='git'
+alias gc='git commit -v'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gf='git fetch'
+alias gaa='git add --all :/'
+alias gr='git rebase'
+alias gs='git stash -u'
+alias gst='git status'
+alias gsp='git stash pop'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git python autojump)
+# Practical functions
+repeatedly() {
+    while true;
+    do
+        "$@"
+        echo "> Hit return to execute:"
+        echo ">" "$@"
+        read
+        clear
+    done
+}
 
-source $ZSH/oh-my-zsh.sh
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
-
-# Global Config
-source $HOME/.zshrc.global
+agblame() {
+    query="$1"
+    ag "$query" | (while read line; do (export f="$(echo $line | cut -d : -f 1)"; export l="$(echo $line | cut -d : -f 2)"; git --no-pager blame $f -L $l,+1); done) | grep "$query"
+}
 
 # OS Specific Config
 if [ "$(uname)" = "Darwin" ]; then
@@ -49,17 +67,8 @@ if [ "$(uname)" = "Linux" ]; then
     source $HOME/.zshrc.linux
 fi
 
-# Hostname Specific Config
-HOSTNAME=$(hostname)
-
-# Special case for KTH hostnames
-IS_IT_A_KTH_HOSTNAME=$(hostname | grep "kthopen.kth.se" | wc -l | cut -d ' ' -f 8)
-if [ "$IS_IT_A_KTH_HOSTNAME" -eq "1" ]; then
-    HOSTNAME="simonl-air.local"
-fi
-
 # Load per-hostname-specific ZSH config
-HOSTCFG=$HOME/.zshrc.$HOSTNAME
-if [ -f $HOSTCFG ]; then
-    source $HOSTCFG
-fi
+#HOSTCFG=$HOME/.zshrc.$(hostname)
+#if [ -e $HOSTCFG ]; then
+#    source $HOSTCFG
+#fi

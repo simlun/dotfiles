@@ -456,9 +456,9 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
-	<true/>
+	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableRendezvous</key>
@@ -469,14 +469,14 @@
 	<real>2.0656411647796631</real>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x68-0x100000</key>
+		<key>0x19-0x60000</key>
 		<dict>
 			<key>Action</key>
-			<integer>18</integer>
+			<integer>39</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x68-0x80000</key>
+		<key>0x68-0x100000</key>
 		<dict>
 			<key>Action</key>
 			<integer>18</integer>
@@ -490,13 +490,6 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x6a-0x80000</key>
-		<dict>
-			<key>Action</key>
-			<integer>21</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
 		<key>0x6b-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -504,21 +497,7 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x6b-0x80000</key>
-		<dict>
-			<key>Action</key>
-			<integer>20</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
 		<key>0x6c-0x100000</key>
-		<dict>
-			<key>Action</key>
-			<integer>19</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
-		<key>0x6c-0x80000</key>
 		<dict>
 			<key>Action</key>
 			<integer>19</integer>
@@ -667,12 +646,38 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
+	<key>NSScrollViewShouldScrollUnderTitlebar</key>
+	<false/>
+	<key>NSTableView Columns KeyBingingTable</key>
+	<array>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATCG
+		</data>
+		<string>198</string>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
+		hAErATGG
+		</data>
+		<string>307</string>
+	</array>
+	<key>NSTableView Hidden Columns KeyBingingTable</key>
+	<array/>
+	<key>NSTableView Sort Ordering KeyBingingTable</key>
+	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>0 -205 300 71 0 0 0 0 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>330 115 924 485 0 0 1440 900 </string>
+	<string>330 231 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 256 810 621 0 0 1440 877 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 1010 783 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_92DCA84B-DBB0-4C68-BDFA-AEA7C7C505F8</key>
@@ -846,6 +851,8 @@
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Location</key>
+			<string></string>
+			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
 			<real>0.30000001192092896</real>
@@ -1405,8 +1412,20 @@
 			<string>/Users/simlun</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncInstallationId</key>
+	<string>3C6FB82C-95D7-40F0-89DD-74626DC10708</string>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncSuppressAnnyoingBellOffer</key>
+	<true/>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>486891321.156982</real>
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>454364048.50913799</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
@@ -1470,8 +1489,10 @@
 	<integer>3</integer>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedAlternateAppNameKey</key>
+	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=22</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
@@ -1500,6 +1521,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1465209728</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -1523,6 +1546,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.4</string>
+	<string>3.0.0</string>
 </dict>
 </plist>

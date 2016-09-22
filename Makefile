@@ -1,5 +1,5 @@
 PWD := $(shell pwd)
-OHMYZSH_IS_INSTALLED := $(shell [ -e ~/.oh-my-zsh ] && echo yes || echo no)
+PREZTO_IS_INSTALLED := $(shell [ -e ~/.zprezto] && echo yes || echo no)
 
 .PHONY: all
 all: vim git zsh tmux
@@ -15,23 +15,23 @@ git:
 	ln -s $(PWD)/gitignore $(HOME)/.gitignore
 	./scripts/create-local-gitconfig.sh
 
-.PHONY: oh-my-zsh
-oh-my-zsh:
-ifeq ($(OHMYZSH_IS_INSTALLED),yes)
-	@echo "oh-my-zsh seems to be already installed, good!"
+.PHONY: prezto
+prezto:
+ifeq ($(PREZTO_IS_INSTALLED),yes)
+	@echo "prezto seems to be already installed, good!"
 else
 	git submodule init
-	git submodule update
-	ln -s $(PWD)/oh-my-zsh $(HOME)/.oh-my-zsh
+	git submodule update --init --recursive
+	ln -s $(PWD)/zprezto $(HOME)/.zprezto
 endif
 
 .PHONY: zsh
-zsh: oh-my-zsh
+zsh: prezto
 	ln -s $(PWD)/zshrc $(HOME)/.zshrc
-	ln -s $(PWD)/zshrc.global $(HOME)/.zshrc.global
-	ln -s $(PWD)/zshrc.aliases $(HOME)/.zshrc.aliases
 	ln -s $(PWD)/zshrc.mac $(HOME)/.zshrc.mac
 	ln -s $(PWD)/zshrc.linux $(HOME)/.zshrc.linux
+	ln -s $(PWD)/zpreztorc $(HOME)/.zpreztorc
+	ln -s $(PWD)/zlogin $(HOME)/.zlogin
 
 .PHONY: tmux
 tmux:
@@ -47,9 +47,8 @@ clean:
 	rm -vf $(HOME)/.gitconfig
 	rm -vf $(HOME)/.gitignore
 	rm -vf $(HOME)/.zshrc
-	rm -vf $(HOME)/.zshrc.aliases
 	rm -vf $(HOME)/.zshrc.mac
 	rm -vf $(HOME)/.zshrc.linux
-	rm -vf $(HOME)/.zshrc.global
+	rm -vf $(HOME)/.zpreztorc
+	rm -vf $(HOME)/.zlogin
 	rm -vf $(HOME)/.tmux.conf
-

@@ -1,5 +1,3 @@
-export ZSHRCLOADS="$ZSHRCLOADS .zshrc.mac"
-
 # Personal PATH stuff
 export PATH=$HOME/Bin:$PATH
 
@@ -20,9 +18,6 @@ test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 # Anaconda
 test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
 
-# Set locale
-export LANG=en_US.UTF-8
-
 # Aliases
 alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
@@ -37,3 +32,9 @@ function diff_2_cats {
     diff $TMP1 $TMP2
     rm -i $TMP1 $TMP2
 }
+
+# Remove the "Last login" message for new terminals
+touch $HOME/.hushlogin
+
+# iTerm integration
+test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
