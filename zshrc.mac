@@ -23,6 +23,7 @@ test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
 
 # Aliases
 alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias lockscreen='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # Practical functions
 function diff_2_cats {
