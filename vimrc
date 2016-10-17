@@ -102,7 +102,6 @@ map <leader>p "*p
 
 " Visual white space
 set list
-"set listchars=eol:⤦,tab:⇾⋅,trail:⋅,extends:￫,precedes:⊲
-set listchars=tab:>⋅,trail:⋅,extends:￫,precedes:⊲
+set listchars=tab:>\ ,trail:.,extends:>
 
 command W w
