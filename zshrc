@@ -73,3 +73,5 @@ fi
 #if [ -e $HOSTCFG ]; then
 #    source $HOSTCFG
 #fi
+
+test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
