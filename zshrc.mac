@@ -15,6 +15,9 @@ test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvw
 # Pipsi
 test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 
+# Autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 # Anaconda
 test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
 
