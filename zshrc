@@ -34,10 +34,12 @@ alias ip=ipython
 
 alias g='git'
 alias gc='git commit -v'
+alias gco='git checkout'
 alias gca='git commit -va'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gf='git fetch'
+alias ga='git add'
 alias gaa='git add --all :/'
 alias gr='git rebase'
 alias gs='git stash -u'
