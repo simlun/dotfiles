@@ -1,5 +1,5 @@
 PWD := $(shell pwd)
-PREZTO_IS_INSTALLED := $(shell [ -e ~/.zprezto] && echo yes || echo no)
+PREZTO_IS_INSTALLED := $(shell [ -e ~/.zprezto ] && echo yes || echo no)
 
 .PHONY: all
 all: vim git zsh tmux
