@@ -36,8 +36,8 @@ zsh: prezto
 .PHONY: tmux
 tmux:
 	cat $(PWD)/tmux.conf > $(HOME)/.tmux.conf
-	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-dark.conf >> $(HOME)/.tmux.conf
-	cat $(PWD)/tmux-colors-solarized/tmuxcolors-light.conf >> $(HOME)/.tmux.conf
+	cat $(PWD)/tmux-colors-solarized/tmuxcolors-dark.conf >> $(HOME)/.tmux.conf
+	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-light.conf >> $(HOME)/.tmux.conf
 
 # TODO: Make this clean target safer! Ask first?
 .PHONY: clean
