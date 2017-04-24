@@ -19,7 +19,11 @@ test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Anaconda
-test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
+#test -e $HOME/anaconda/bin && export PATH=$HOME/anaconda/bin:$PATH
+#export PATH=$HOME/anaconda/bin:$PATH
+
+# MacTeX
+export PATH=/Library/TeX/texbin:$PATH
 
 # Aliases
 alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
