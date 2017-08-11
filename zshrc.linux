@@ -1,7 +1,7 @@
 export ZSHRCLOADS="$ZSHRCLOADS .zshrc.linux"
 
 # Personal PATH stuff
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/Bin:$PATH
 
 # ssh-agent
 # http://mah.everybody.org/docs/ssh#run-ssh-agent
@@ -26,3 +26,13 @@ else
      start_agent;
 fi
 
+# Virtualenvwrapper
+test -e /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
+
+# Pipsi
+test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
+
+# Autojump
+test -e /usr/share/autojump/autojump.zsh && source /usr/share/autojump/autojump.zsh
+
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
