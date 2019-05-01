@@ -70,16 +70,16 @@ set fileencodings=utf-8,latin1
 
 " Multipurpose tab key
 " Indent if we're at the beginning of a line. Else, do completion.
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+"function! InsertTabWrapper()
+"    let col = col('.') - 1
+"    if !col || getline('.')[col - 1] !~ '\k'
+"        return "\<tab>"
+"    else
+"        return "\<c-p>"
+"    endif
+"endfunction
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <s-tab> <c-n>
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -101,10 +101,60 @@ set listchars=tab:>\ ,trail:.,extends:>
 
 command W w
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Completion
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" setup the supertab chaining for any filetype that has a provided |omnifunc|
+" to first try that, then fall back to supertab's default, <c-p>, completion:
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
+
+" https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+
+"" change the 'completeopt' option so that Vim's popup menu doesn't select the
+"" first completion item, but rather just inserts the longest common text of
+"" all matches; and the menu will come up even if there's only one match. (The
+"" longest setting is responsible for the former effect and the menuone is
+"" responsible for the latter.)
+set completeopt=longest,menuone
+
+" Sets whether or not to pre-highlight the first match when completeopt has
+" the popup menu enabled and the 'longest' option as well. When enabled, <tab>
+" will kick off completion and pre-select the first entry in the popup menu,
+" allowing you to simply hit <enter> to use it.
+let g:SuperTabLongestHighlight = 1
+
+"" Completion
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Golang
 ""
+
+" Cheat sheet:
+"
+" <leader>b     Build
+" <leader>R     Build and run
+" <leader>t     Test
+" <leader>c     Test coverage
+" <leader>d     Fuzzy search for declarations (ctrlp)
+" <leader>r     Find referrers
+" :A            :GoAlternate in current buffer
+" :AV           :GoAlternate in vsplit
+" :AS           :GoAlternate in split
+" :AT           :GoAlternate in tabe
+" vif           Select function code
+" vaf           Select a (whole) function
+" [[ and ]]     Navigate between functions
+" gd            Go to definition (C-t takes you back)
+" K             Show help text
+" <tab>         Code completion (in insert mode)
 
 " Vim has a setting called autowrite that writes the content of the file
 " automatically if you call :make. vim-go also makes use of this setting. Open
@@ -122,7 +172,7 @@ let g:go_list_type = "quickfix"
 
 " I also use these shortcuts to build and run a Go program with <leader>b
 " and <leader>r:
-autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>R <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
@@ -155,7 +205,7 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_deadline = "5s"
 
 " Use ctrp to find declarations
-autocmd FileType go nmap <leader>f :GoDeclsDir<CR>
+autocmd FileType go nmap <leader>d :GoDeclsDir<CR>
 
 " Find referrers too
 autocmd FileType go nmap <leader>r :GoReferrers<CR>
@@ -175,10 +225,13 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 "autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_type_info = 1
 " Instead of default 800ms:
-set updatetime=100
+set updatetime=500
 
 " vim-go can automatically highlight matching identifiers
 let g:go_auto_sameids = 1
+
+" This instructs deoplete to use omni completion for Go files.
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 ""
 "" Golang
