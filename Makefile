@@ -8,7 +8,7 @@ all: vim git zsh tmux xsession
 vim:
 	ln -s $(PWD)/vim $(HOME)/.vim
 	ln -s $(PWD)/vimrc $(HOME)/.vimrc
-	ln -s $(PWD)/gometlinter.json $(HOME)/.gometlinter.json
+	ln -s $(PWD)/gometalinter.json $(HOME)/.gometalinter.json
 
 .PHONY: git
 git:
