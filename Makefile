@@ -8,6 +8,7 @@ all: vim git zsh tmux xsession
 vim:
 	ln -s $(PWD)/vim $(HOME)/.vim
 	ln -s $(PWD)/vimrc $(HOME)/.vimrc
+	ln -s $(PWD)/gometlinter.json $(HOME)/.gometlinter.json
 
 .PHONY: git
 git:
@@ -54,6 +55,7 @@ tmux:
 clean:
 	rm -vf $(HOME)/.vim
 	rm -vf $(HOME)/.vimrc
+	rm -vf $(HOME)/.gometlinter.json
 	rm -vf $(HOME)/.gitconfig
 	rm -vf $(HOME)/.gitignore
 	rm -vf $(HOME)/.zshrc

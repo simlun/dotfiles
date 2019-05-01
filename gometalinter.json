@@ -1,0 +1,3 @@
+{
+    "Exclude": ["exported (.*) should have comment or be unexported"]
+}
