@@ -20,6 +20,7 @@ fi
 
 # Disable ZSH autocorrect
 unsetopt CORRECT
+setopt CLOBBER
 
 # Helpers
 alias reload="source ~/.zshrc"
@@ -65,6 +66,22 @@ agblame() {
     ag "$query" | (while read line; do (export f="$(echo $line | cut -d : -f 1)"; export l="$(echo $line | cut -d : -f 2)"; git --no-pager blame $f -L $l,+1); done) | grep "$query"
 }
 
+pwned() {
+    echo "Password:"
+    read PW
+    K_ANON_PREFIX=$(echo -n $PW | shasum | cut -b 1-5)
+    K_ANON_SUFFIX=$(echo -n $PW | shasum | tr '[:lower:]' '[:upper:]' | cut -d ' ' -f 1 | cut -b 6-)
+    unset PW
+
+    echo "has been seen:"
+    curl -s https://api.pwnedpasswords.com/range/$K_ANON_PREFIX \
+        | grep $K_ANON_SUFFIX \
+        | cut -d : -f 2 | xargs
+    echo "times."
+    unset K_ANON_SUFFIX
+    unset K_ANON_PREFIX
+}
+
 # OS Specific Config
 if [ "$(uname)" = "Darwin" ]; then
     source $HOME/.zshrc.mac
@@ -84,3 +101,11 @@ test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
 # Golang default GOPATH
 export GOPATH=$HOME/.gopath
 export PATH=$GOPATH/bin:$PATH
+
+# Kubernetes log watcher
+kubelogwatch() {
+    namespace=$1
+    app=$2
+    cmd="bash -c \"kubectl -n $namespace logs --timestamps --tail=\$LINES -l app=$app | sort | fold -w \$COLUMNS - | tail -n \$((\$LINES - 3))\""
+    watch -n 2 $cmd
+}
