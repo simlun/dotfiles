@@ -2,7 +2,7 @@
 *.py[cod]
 .noseids
 # PyCharm
-.idea/
+#.idea/
 
 ### Mac OS X
 .DS_Store

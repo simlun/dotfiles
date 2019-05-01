@@ -4,6 +4,9 @@
     autocrlf = input
     whitespace = cr-at-eol
 
+[commit]
+    verbose = true
+
 [merge]
     defaultToUpstream = true
     keepBackup = false
