@@ -80,3 +80,7 @@ fi
 #fi
 
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
+
+# Golang default GOPATH
+export GOPATH=$HOME/.gopath
+export PATH=$GOPATH/bin:$PATH
