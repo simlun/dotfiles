@@ -183,3 +183,10 @@ let g:go_auto_sameids = 1
 ""
 "" Golang
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Allow opening lots of tabs with `vim -p ...`
+set tabpagemax=100
+
+" It seems to be popular to use 2 spaces indentation for YAML
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
