@@ -17,17 +17,12 @@ set autoindent
 """ Searching
 " When a bracket is inserted, briefly jump to the matching one
 set showmatch
-" While typing a search command, show where the pattern, as it was typed so far, matches
-set showmatch
 " While typing a search command, show where the pattern, as it was typed so far, matches.
 set incsearch
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
-" Clear the search buffer when hitting return
-function! MapCR()
-    nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
+" Clear the search buffer when hitting escape twice
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 
