@@ -65,9 +65,9 @@ clean:
 	rm -vf $(HOME)/.zlogin
 	rm -vf $(HOME)/.tmux.conf
 	rm -vf $(HOME)/.xsession
-	rm -vf $(HOME)/.xmodmap
+	rm -vf $(HOME)/.Xmodmap
 
 .PHONY: xsession
-xsession: xmodmap
+xsession:
 	test -e $(HOME)/.xsession || ln -s $(PWD)/xsession $(HOME)/.xsession
-	test -e $(HOME)/.xmodmap || ln -s $(PWD)/xmodmap $(HOME)/.xmodmap
+	test -e $(HOME)/.Xmodmap || ln -s $(PWD)/Xmodmap $(HOME)/.Xmodmap
