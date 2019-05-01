@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/bundle/vim-ripgrep"]
+	path = vim/bundle/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep.git
