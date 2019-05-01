@@ -33,6 +33,16 @@ zsh: prezto
 	ln -s $(PWD)/zpreztorc $(HOME)/.zpreztorc
 	ln -s $(PWD)/zlogin $(HOME)/.zlogin
 
+# I use tmux 2.8 (as it's the version used in Fedora 30)
+#
+# Installing tmux 2.8 on a Mac:
+# $ brew uninstall tmux
+# $ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/b3bd700d9fc53fa153c884b0ea613822de1f375c/Formula/tmux.rb
+# $ brew pin tmux
+# $ brew list --pinned
+#
+# A newer tmux can be used after this PR is merged:
+# https://github.com/seebi/tmux-colors-solarized/pull/23/files
 .PHONY: tmux
 tmux:
 	cat $(PWD)/tmux.conf > $(HOME)/.tmux.conf
