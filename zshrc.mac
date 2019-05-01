@@ -10,6 +10,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
 
 # Pipsi
