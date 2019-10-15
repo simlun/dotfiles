@@ -67,3 +67,10 @@ clean:
 xsession:
 	test -e $(HOME)/.xsession || ln -s $(PWD)/xsession $(HOME)/.xsession
 	test -e $(HOME)/.Xmodmap || ln -s $(PWD)/Xmodmap $(HOME)/.Xmodmap
+
+.PHONY: i3
+i3:
+	mkdir -p $(HOME)/.config/i3
+	mkdir -p $(HOME)/.config/i3status
+	test -e $(HOME)/.config/i3/config || ln -s $(PWD)/i3/i3.conf $(HOME)/.config/i3/config
+	test -e $(HOME)/.config/i3status/config || ln -s $(PWD)/i3/i3status.conf $(HOME)/.config/i3status/config
