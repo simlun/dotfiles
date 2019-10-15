@@ -47,3 +47,9 @@ touch $HOME/.hushlogin
 
 # iTerm integration
 test -e $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
+
+# From gpg-agent man page:
+#   "You should always add the following lines to your .bashrc or whatever
+#    initialization file is used for all shell invocations:"
+GPG_TTY=$(tty)
+export GPG_TTY

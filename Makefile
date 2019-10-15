@@ -50,7 +50,7 @@ tmux:
 clean:
 	rm -vf $(HOME)/.vim
 	rm -vf $(HOME)/.vimrc
-	rm -vf $(HOME)/.gometlinter.json
+	rm -vf $(HOME)/.gometalinter.json
 	rm -vf $(HOME)/.gitconfig
 	rm -vf $(HOME)/.gitignore
 	rm -vf $(HOME)/.base16_theme
