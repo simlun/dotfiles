@@ -28,9 +28,10 @@ set ignorecase smartcase
 
 """ Theme
 syntax enable
-set background=dark
-"set background=light
-colorscheme solarized
+"set background=dark
+set background=light
+"colorscheme solarized
+colorscheme base16-solarized-light
 " Enable line numbering
 set number
 " Always show the status line
