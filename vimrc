@@ -29,9 +29,13 @@ set ignorecase smartcase
 """ Theme
 syntax enable
 "set background=dark
-set background=light
+"set background=light
 "colorscheme solarized
-colorscheme base16-solarized-light
+"colorscheme base16-solarized-light
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 " Enable line numbering
 set number
 " Always show the status line

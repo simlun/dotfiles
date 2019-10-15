@@ -26,8 +26,12 @@ else
 	ln -s $(PWD)/zprezto $(HOME)/.zprezto
 endif
 
+.PHONY: base16
+base16:
+	ln -s $(PWD)/base16/base16-shell/scripts/base16-solarized-light.sh $(HOME)/.base16_theme
+
 .PHONY: zsh
-zsh: prezto
+zsh: prezto base16
 	ln -s $(PWD)/zshrc $(HOME)/.zshrc
 	ln -s $(PWD)/zshrc.mac $(HOME)/.zshrc.mac
 	ln -s $(PWD)/zshrc.linux $(HOME)/.zshrc.linux
@@ -37,9 +41,9 @@ zsh: prezto
 .PHONY: tmux
 tmux:
 	cat $(PWD)/tmux.conf > $(HOME)/.tmux.conf
-	cat $(PWD)/tmux-colors-solarized/tmuxcolors-dark.conf >> $(HOME)/.tmux.conf
+	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-dark.conf >> $(HOME)/.tmux.conf
 	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-light.conf >> $(HOME)/.tmux.conf
-	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-base16.conf >> $(HOME)/.tmux.conf
+	cat $(PWD)/tmux-colors-solarized/tmuxcolors-base16.conf >> $(HOME)/.tmux.conf
 
 # TODO: Make this clean target safer! Ask first?
 .PHONY: clean
@@ -49,6 +53,7 @@ clean:
 	rm -vf $(HOME)/.gometlinter.json
 	rm -vf $(HOME)/.gitconfig
 	rm -vf $(HOME)/.gitignore
+	rm -vf $(HOME)/.base16_theme
 	rm -vf $(HOME)/.zshrc
 	rm -vf $(HOME)/.zshrc.mac
 	rm -vf $(HOME)/.zshrc.linux
