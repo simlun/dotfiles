@@ -27,8 +27,13 @@ else
 endif
 
 .PHONY: base16
-base16:
+base16: $(HOME)/.base16_theme $(HOME)/.vimrc_background
+
+$(HOME)/.base16_theme:
 	ln -s $(PWD)/base16/base16-shell/scripts/base16-solarized-light.sh $(HOME)/.base16_theme
+
+$(HOME)/.vimrc_background:
+	cp $(PWD)/base16/vimrc_background $(HOME)/.vimrc_background
 
 .PHONY: zsh
 zsh: prezto base16
@@ -54,6 +59,7 @@ clean:
 	rm -vf $(HOME)/.gitconfig
 	rm -vf $(HOME)/.gitignore
 	rm -vf $(HOME)/.base16_theme
+	rm -vf $(HOME)/.vimrc_background
 	rm -vf $(HOME)/.zshrc
 	rm -vf $(HOME)/.zshrc.mac
 	rm -vf $(HOME)/.zshrc.linux
