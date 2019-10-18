@@ -74,12 +74,21 @@ xsession:
 	test -e $(HOME)/.xsession || ln -s $(PWD)/xsession $(HOME)/.xsession
 	test -e $(HOME)/.Xmodmap || ln -s $(PWD)/Xmodmap $(HOME)/.Xmodmap
 
+.PHONY: clean-i3
+clean-i3:
+	rm -rf $(HOME)/.config/i3
+	rm -rf $(HOME)/.config/i3status
+
 .PHONY: i3
 i3:
 	mkdir -p $(HOME)/.config/i3
 	mkdir -p $(HOME)/.config/i3status
-	test -e $(HOME)/.config/i3/config || ln -s $(PWD)/i3/i3.conf $(HOME)/.config/i3/config
-	test -e $(HOME)/.config/i3status/config || ln -s $(PWD)/i3/i3status.conf $(HOME)/.config/i3status/config
+	ln -s $(PWD)/i3/i3.conf $(HOME)/.config/i3/config
+	ln -s $(PWD)/i3/i3status.conf $(HOME)/.config/i3status/config
+	mkdir -p $(HOME)/.config/i3/bin
+	ln -s $(PWD)/i3/bin/keymap $(HOME)/.config/i3/bin/keymap
+	ln -s $(PWD)/i3/bin/passmenu $(HOME)/.config/i3/bin/passmenu
+	ln -s $(PWD)/i3/bin/xbacklight $(HOME)/.config/i3/bin/xbacklight
 
 .PHONY: simlun-fedora-repo
 simlun-fedora-repo:
