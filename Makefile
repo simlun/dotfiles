@@ -80,3 +80,7 @@ i3:
 	mkdir -p $(HOME)/.config/i3status
 	test -e $(HOME)/.config/i3/config || ln -s $(PWD)/i3/i3.conf $(HOME)/.config/i3/config
 	test -e $(HOME)/.config/i3status/config || ln -s $(PWD)/i3/i3status.conf $(HOME)/.config/i3status/config
+
+.PHONY: simlun-fedora-repo
+simlun-fedora-repo:
+	sudo wget https://bintray.com/simlun/fedora/rpm -O /etc/yum.repos.d/bintray-simlun-fedora.repo
