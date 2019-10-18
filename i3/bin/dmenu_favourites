@@ -1,0 +1,31 @@
+#!/bin/sh
+
+actions=$(cat <<END
+firefox
+lock
+gmail
+alsamixer
+spotify
+END
+)
+
+choice=$(echo "$actions" | dmenu)
+case "$choice" in
+        firefox)
+            firefox &
+            ;;
+        lock)
+            i3lock &
+            ;;
+        gmail)
+            google-chrome --app=https://mail.google.com/ &
+            ;;
+        alsamixer)
+            st -e "alsamixer" &
+            ;;
+        spotify)
+            google-chrome --app=https://play.spotify.com/ &
+            ;;
+        *)
+            exit 1
+esac

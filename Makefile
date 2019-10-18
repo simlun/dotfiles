@@ -90,6 +90,7 @@ i3:
 	ln -s $(PWD)/i3/bin/passmenu $(HOME)/.config/i3/bin/passmenu
 	ln -s $(PWD)/i3/bin/xbacklight $(HOME)/.config/i3/bin/xbacklight
 	ln -s $(PWD)/i3/bin/dmenu_actions $(HOME)/.config/i3/bin/dmenu_actions
+	test -e $(HOME)/.config/i3/bin/dmenu_favourites || cp $(PWD)/i3/bin/dmenu_favourites.tmpl $(HOME)/.config/i3/bin/dmenu_favourites
 
 .PHONY: simlun-fedora-repo
 simlun-fedora-repo:
