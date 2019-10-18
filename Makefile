@@ -89,6 +89,7 @@ i3:
 	ln -s $(PWD)/i3/bin/keymap $(HOME)/.config/i3/bin/keymap
 	ln -s $(PWD)/i3/bin/passmenu $(HOME)/.config/i3/bin/passmenu
 	ln -s $(PWD)/i3/bin/xbacklight $(HOME)/.config/i3/bin/xbacklight
+	ln -s $(PWD)/i3/bin/dmenu_actions $(HOME)/.config/i3/bin/dmenu_actions
 
 .PHONY: simlun-fedora-repo
 simlun-fedora-repo:

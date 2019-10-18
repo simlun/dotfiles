@@ -1,0 +1,31 @@
+#!/bin/sh
+
+actions=$(cat <<END
+input
+rename_workspace
+move_workspace_right
+move_workspace_left
+screenshot
+END
+)
+
+choice=$(echo "$actions" | dmenu)
+case "$choice" in
+        input)
+            i3-input
+            ;;
+        rename_workspace)
+            i3-input -F 'rename workspace to "%s"' -P 'New name: '
+            ;;
+        move_workspace_right)
+            i3-msg 'move workspace to output right'
+            ;;
+        move_workspace_left)
+            i3-msg 'move workspace to output left'
+            ;;
+        screenshot)
+            gnome-screenshot -a
+            ;;
+        *)
+            exit 1
+esac
