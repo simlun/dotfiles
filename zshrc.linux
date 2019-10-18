@@ -1,7 +1,7 @@
 export ZSHRCLOADS="$ZSHRCLOADS .zshrc.linux"
 
-# Personal PATH stuff
-test -e $HOME/Bin && export PATH=$HOME/Bin:$PATH
+# Personal binaries and Ruby gems
+test -e $HOME/bin && export PATH=$HOME/bin:$PATH
 
 # ssh-agent
 # http://mah.everybody.org/docs/ssh#run-ssh-agent
@@ -31,9 +31,6 @@ test -e /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
 # Pipsi
 test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
-
-# Ruby gems
-test -e $HOME/bin && export PATH=$HOME/bin:$PATH
 
 # Snapd
 test -e /snap/bin && export PATH=/snap/bin:$PATH
