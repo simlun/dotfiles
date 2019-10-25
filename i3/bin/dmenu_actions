@@ -3,6 +3,8 @@
 actions=$(cat <<END
 input
 rename_workspace
+move_workspace_up
+move_workspace_down
 move_workspace_right
 move_workspace_left
 screenshot
@@ -16,6 +18,12 @@ case "$choice" in
             ;;
         rename_workspace)
             i3-input -F 'rename workspace to "%s"' -P 'New name: '
+            ;;
+        move_workspace_up)
+            i3-msg 'move workspace to output up'
+            ;;
+        move_workspace_down)
+            i3-msg 'move workspace to output down'
             ;;
         move_workspace_right)
             i3-msg 'move workspace to output right'
