@@ -248,3 +248,6 @@ set tabpagemax=100
 
 " It seems to be popular to use 2 spaces indentation for YAML
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" Same for JavaScript
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType jsx setlocal ts=2 sts=2 sw=2 expandtab
