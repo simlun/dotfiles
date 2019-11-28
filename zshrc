@@ -115,3 +115,6 @@ kubelogwatch() {
     cmd="bash -c \"kubectl -n $namespace logs --timestamps --tail=\$LINES -l app=$app | sort | fold -w \$COLUMNS - | tail -n \$((\$LINES - 3))\""
     watch -n 2 $cmd
 }
+
+# Don't hide outputs missing trailing newline
+unsetopt prompt_cr prompt_sp
