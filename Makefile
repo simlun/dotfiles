@@ -2,7 +2,7 @@ PWD := $(shell pwd)
 PREZTO_IS_INSTALLED := $(shell [ -e ~/.zprezto ] && echo yes || echo no)
 
 .PHONY: all
-all: vim git zsh tmux xsession
+all: vim git zsh tmux xsession bin
 
 .PHONY: vim
 vim:
@@ -95,3 +95,8 @@ i3:
 .PHONY: simlun-fedora-repo
 simlun-fedora-repo:
 	sudo wget https://bintray.com/simlun/fedora/rpm -O /etc/yum.repos.d/bintray-simlun-fedora.repo
+
+.PHONY: bin
+bin:
+	mkdir -p $(HOME)/bin
+	for b in `ls -1 $(PWD)/bin`; do ln -sf $(PWD)/$$b $(HOME)/bin/$$b; done
