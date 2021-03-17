@@ -37,7 +37,7 @@ endif
 base16: $(HOME)/.base16_theme $(HOME)/.vimrc_background
 
 $(HOME)/.base16_theme:
-	ln -s $(PWD)/base16/base16-shell/scripts/base16-solarized-light.sh $(HOME)/.base16_theme
+	ln -s $(PWD)/base16/base16-shell/scripts/base16-solarized-dark.sh $(HOME)/.base16_theme
 
 $(HOME)/.vimrc_background:
 	cp $(PWD)/base16/vimrc_background $(HOME)/.vimrc_background
@@ -53,8 +53,6 @@ zsh: prezto base16
 .PHONY: tmux
 tmux:
 	cat $(PWD)/tmux.conf > $(HOME)/.tmux.conf
-	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-dark.conf >> $(HOME)/.tmux.conf
-	#cat $(PWD)/tmux-colors-solarized/tmuxcolors-light.conf >> $(HOME)/.tmux.conf
 	cat $(PWD)/tmux-colors-solarized/tmuxcolors-base16.conf >> $(HOME)/.tmux.conf
 
 # TODO: Make this clean target safer! Ask first?
