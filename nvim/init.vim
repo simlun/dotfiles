@@ -27,7 +27,9 @@ set ignorecase smartcase
 " Allow opening lots of tabs with `vim -p ...`
 set tabpagemax=100
 
+""" Line numbering
 set number
+highlight LineNr ctermfg=DarkGrey
 
 """ vim-gitgutter
 " Don't map any special keys for gitgutter
