@@ -32,6 +32,13 @@ test -e /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 # Pipsi
 test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 
+# Pyenv
+test -e $HOME/.pyenv && export PYENV_ROOT="$HOME/.pyenv"
+test -e $HOME/.pyenv && export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # Snapd
 test -e /snap/bin && export PATH=/snap/bin:$PATH
 
