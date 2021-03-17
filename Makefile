@@ -2,7 +2,14 @@ PWD := $(shell pwd)
 PREZTO_IS_INSTALLED := $(shell [ -e ~/.zprezto ] && echo yes || echo no)
 
 .PHONY: all
-all: vim git zsh tmux xsession bin
+all: git zsh tmux bin
+
+.PHONY: nvim
+nvim:
+	mkdir -p $(HOME)/.config/nvim
+	ln -s $(PWD)/nvim/init.vim $(HOME)/.config/nvim/init.vim
+	ln -s $(PWD)/nvim/dotlocal_share_nvim_site_pack_myplugins_start $(HOME)/.local/share/nvim/site/pack/myplugins/start
+
 
 .PHONY: vim
 vim:

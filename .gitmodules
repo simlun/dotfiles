@@ -76,3 +76,6 @@
 [submodule "vim/bundle/nvim-yarp"]
 	path = vim/bundle/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp.git
+[submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/vim-gitgutter"]
+	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

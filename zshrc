@@ -36,9 +36,6 @@ alias please='eval "fc -lnr | head -n 1" | xargs sudo'
 alias l='ls -l'
 alias ll='ls -la'
 
-alias py=python
-alias ip=ipython
-
 alias g='git'
 alias gc='git commit -v'
 alias gco='git checkout'
@@ -118,3 +115,8 @@ kubelogwatch() {
 
 # Don't hide outputs missing trailing newline
 unsetopt prompt_cr prompt_sp
+
+# Use nvim if available
+if command -V nvim &>/dev/null; then
+    alias vim=nvim
+fi
