@@ -34,5 +34,9 @@ set number
 let g:gitgutter_map_keys = 0
 " Use same background color for sign column as line number column
 highlight! link SignColumn LineNr
-" Update signs when files are saved
+" Update signs when files are read and saved
+autocmd BufReadPost * GitGutter
 autocmd BufWritePost * GitGutter
+" Jump between hunks
+nmap gh <Plug>(GitGutterNextHunk)<CR>zz
+nmap gH <Plug>(GitGutterPrevHunk)<CR>zz
