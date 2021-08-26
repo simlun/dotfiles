@@ -1,0 +1,62 @@
+#!/bin/sh
+
+actions=$(cat <<END
+lock
+move_workspace
+enable_output
+disable_output
+screenshot
+screenshot_full_screen_in_3s
+suspend
+brightness
+END
+)
+
+brightnesses=$(cat <<END
+100%
+75%
+50%
+25%
+10%
+END
+)
+
+choice=$(echo "$actions" | dmenu)
+case "$choice" in
+        lock)
+            swaylock -f -c 333333
+            ;;
+        move_workspace)
+            outputs=$(swaymsg --raw -t get_outputs | jq '.[].name' | tr -d '"')
+            output=$(echo "$outputs" | dmenu)
+            swaymsg move workspace to "$output" current
+            ;;
+        enable_output)
+            outputs=$(swaymsg --raw -t get_outputs | jq '.[].name' | tr -d '"')
+            output=$(echo "$outputs" | dmenu)
+            swaymsg output "$output" enable
+            ;;
+        disable_output)
+            outputs=$(swaymsg --raw -t get_outputs | jq '.[].name' | tr -d '"')
+            output=$(echo "$outputs" | dmenu)
+            swaymsg output "$output" disable
+            ;;
+        screenshot)
+            GRIM_DEFAULT_DIR=$HOME/Pictures grim -g "$(slurp)"
+            ;;
+        screenshot_full_screen_in_3s)
+            sleep 3
+            GRIM_DEFAULT_DIR=$HOME/Pictures grim
+            ;;
+        suspend)
+            swaylock -f -c 333333
+            sleep 1
+            systemctl suspend
+            ;;
+        brightness)
+            brightness=$(echo "$brightnesses" | dmenu)
+            brightnessctl s "$brightness"
+            ;;
+        *)
+            exit 1
+esac

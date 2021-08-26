@@ -97,6 +97,10 @@ i3:
 	ln -s $(PWD)/i3/bin/dmenu_actions $(HOME)/.config/i3/bin/dmenu_actions
 	test -e $(HOME)/.config/i3/bin/dmenu_favourites || cp $(PWD)/i3/bin/dmenu_favourites.tmpl $(HOME)/.config/i3/bin/dmenu_favourites
 
+.PHONY: sway
+sway:
+	ln -s $(PWD)/sway $(HOME)/.config/sway
+
 .PHONY: simlun-fedora-repo
 simlun-fedora-repo:
 	sudo wget https://bintray.com/simlun/fedora/rpm -O /etc/yum.repos.d/bintray-simlun-fedora.repo
