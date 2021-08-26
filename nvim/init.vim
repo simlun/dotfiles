@@ -23,6 +23,8 @@ set hlsearch
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
+" Treat dashes as characters in a word
+set iskeyword+=-
 
 " Allow opening lots of tabs with `vim -p ...`
 set tabpagemax=100
@@ -42,3 +44,4 @@ autocmd BufWritePost * GitGutter
 " Jump between hunks
 nmap gh <Plug>(GitGutterNextHunk)<CR>zz
 nmap gH <Plug>(GitGutterPrevHunk)<CR>zz
+
