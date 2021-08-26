@@ -56,4 +56,8 @@ export ZSH_HIGHLIGHT_STYLES=(cursor bold)
 test -e "$HOME/Applications/pycharm/pycharm-current/bin" && export PATH="$HOME/Applications/pycharm/pycharm-current/bin:$PATH"
 test -e "$HOME/Applications/idea/idea-current/bin" && export PATH="$HOME/Applications/idea/idea-current/bin:$PATH"
 
+# Prevent gray screen in PyCharm/IntelliJ
+# https://github.com/swaywm/sway/issues/595
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 #eval `dircolors .dircolors`
