@@ -33,6 +33,9 @@ set tabpagemax=100
 set number
 highlight LineNr ctermfg=DarkGrey
 
+""" base16.nvim
+colorscheme solarized
+
 """ vim-gitgutter
 " Don't map any special keys for gitgutter
 let g:gitgutter_map_keys = 0

@@ -79,3 +79,6 @@
 [submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/vim-gitgutter"]
 	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/base16.nvim"]
+	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/base16.nvim
+	url = https://github.com/Soares/base16.nvim.git
