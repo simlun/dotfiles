@@ -8,6 +8,7 @@ all: git zsh tmux bin
 nvim:
 	mkdir -p $(HOME)/.config/nvim
 	ln -s $(PWD)/nvim/init.vim $(HOME)/.config/nvim/init.vim
+	mkdir -p $(HOME)/.local/share/nvim/site/pack/myplugins
 	ln -s $(PWD)/nvim/dotlocal_share_nvim_site_pack_myplugins_start $(HOME)/.local/share/nvim/site/pack/myplugins/start
 
 
