@@ -17,10 +17,12 @@ else
 fi
 BATTERY="${BATTERY_SYMBOL} ${BATTERY_STATUS} [${BATTERY_CAPACITY}%${BATTERY_TIME_TO}]"
 
-WIFI_SYMBOL=$(echo -e '\U0001F4F6')
-WIFI_ESSID=$(iwconfig wlo1 | grep -oE "ESSID:\".+\"" | cut -d : -f 2 | tr -d \")
-WIFI_QUALITY=$(iwconfig wlo1 | grep -oE "Link Quality=([0-9]+)/([0-9]+)" | cut -d = -f 2)
-WIFI_SIGNAL=$(iwconfig wlo1 | grep -oE "Signal level=.+ dBm" | cut -d = -f 2 | cut -d ' ' -f 1)
+#WIFI_SYMBOL=$(echo -e '\U0001F4F6')
+#WIFI_ESSID=$(iwgetid -r)
+#WIFI_ESSID=$(iwconfig wlo1 | grep -oE "ESSID:\".+\"" | cut -d : -f 2 | tr -d \")
+#WIFI_QUALITY=$(iwconfig wlo1 | grep -oE "Link Quality=([0-9]+)/([0-9]+)" | cut -d = -f 2)
+#WIFI_SIGNAL=$(iwconfig wlo1 | grep -oE "Signal level=.+ dBm" | cut -d = -f 2 | cut -d ' ' -f 1)
+#WIFI="${WIFI_SYMBOL} ${WIFI_ESSID} [${WIFI_QUALITY}, ${WIFI_SIGNAL_LEVEL}]"
 
 if route -n | grep gpd0 2>&1 > /dev/null; then
     VPN_SYMBOL=$(echo -e '\U0001F512')
@@ -37,4 +39,4 @@ WIFI_SIGNAL_LEVEL=$(if [ $S -lt -90 ]; then echo Worst; elif [ $S -lt -70 ]; the
 LOAD_SYMBOL=$(echo -e '\U0001F525')
 LOAD=$(uptime | grep -oE "load average: .+" | cut -d : -f 2 | xargs)
 
-echo "${WIFI_SYMBOL} ${WIFI_ESSID} [${WIFI_QUALITY}, ${WIFI_SIGNAL_LEVEL}]${VPN} ${BATTERY} ${LOAD_SYMBOL} ${LOAD} ${DATE_SYMBOL} ${DATE}"
+echo -e "${WIFI}${VPN} ${BATTERY} ${LOAD_SYMBOL} ${LOAD} ${DATE_SYMBOL} ${DATE}"

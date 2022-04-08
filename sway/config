@@ -15,14 +15,14 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 #set $term st
-set $term st -f 'SourceCodePro:pixelsize=14:antialias=true:autohint=true' -e tmux
-set $termnotmux st -f 'SourceCodePro:pixelsize=14:antialias=true:autohint=true'
+set $term st -f 'Liberation Mono:pixelsize=13:antialias=true:autohint=true' -e tmux
+set $termnotmux st -f 'Liberation Mono:pixelsize=13:antialias=true:autohint=true'
 # Your preferred application launcher
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
+# output * bg /usr/share/backgrounds/default.png fill
 #
 # Example configuration:
 #
@@ -49,6 +49,11 @@ output * bg /usr/share/backgrounds/default.png fill
 #         timeout 600 'swaylock -f -c 333333' \
 #         before-sleep 'swaylock -f -c 333333'
 
+### Autostart things
+exec nm-applet --indicator
+exec mako
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 ### Input configuration
 #
 # Example configuration:
@@ -65,6 +70,8 @@ output * bg /usr/share/backgrounds/default.png fill
 input "type:keyboard" {
     xkb_layout us
     xkb_options ctrl:nocaps,compose:ralt
+    repeat_delay 350
+    repeat_rate 50
 }
 
 ### Key bindings
@@ -173,7 +180,8 @@ input "type:keyboard" {
     # To find out window classes:
     # $ swaymsg -t get_tree
     for_window [class="rdesktop"] floating enable
-    for_window [class="Wfica_Seamless"] floating enable
+    for_window [app_id="zoom"] floating enable
+    for_window [title="Firefox — Sharing Indicator"] floating enable
 
     # Swap focus between the tiling area and the floating area
     #bindsym $mod+space focus mode_toggle
@@ -216,6 +224,19 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+#
+# Volume control
+#
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+#
+# brightness
+#
+    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 
 #
 # Status Bar:
