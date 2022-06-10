@@ -51,3 +51,6 @@ nmap gH <Plug>(GitGutterPrevHunk)<CR>zz
 " Fix auto-indentation for YAML files, don't indent comments!
 filetype plugin indent on
 autocmd BufNewFile,BufReadPost * if &filetype == "yaml" | set expandtab shiftwidth=2 indentkeys-=0# | endif
+
+" 2-space HTML
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2

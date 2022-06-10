@@ -82,3 +82,6 @@
 [submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/base16.nvim"]
 	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/base16.nvim
 	url = https://github.com/Soares/base16.nvim.git
+[submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/Vim-Jinja2-Syntax"]
+	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
