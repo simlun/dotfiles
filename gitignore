@@ -3,6 +3,7 @@
 .noseids
 # PyCharm
 #.idea/
+*.iml
 
 ### Mac OS X
 .DS_Store
