@@ -33,8 +33,8 @@ else
     VPN=""
 fi
 
-S=$WIFI_SIGNAL
-WIFI_SIGNAL_LEVEL=$(if [ $S -lt -90 ]; then echo Worst; elif [ $S -lt -70 ]; then echo Bad; elif [ $S -lt -67 ]; then echo OK; elif [ $S -lt -50 ]; then echo Good; elif [ $S -lt 0 ]; then echo Excellent; fi)
+#S=$WIFI_SIGNAL
+#WIFI_SIGNAL_LEVEL=$(if [ $S -lt -90 ]; then echo Worst; elif [ $S -lt -70 ]; then echo Bad; elif [ $S -lt -67 ]; then echo OK; elif [ $S -lt -50 ]; then echo Good; elif [ $S -lt 0 ]; then echo Excellent; fi)
 
 LOAD_SYMBOL=$(echo -e '\U0001F525')
 LOAD=$(uptime | grep -oE "load average: .+" | cut -d : -f 2 | xargs)
