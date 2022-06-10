@@ -76,3 +76,5 @@
     default = current
 [diff]
 	noprefix = true
+[pull]
+	ff = only
