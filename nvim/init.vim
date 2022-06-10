@@ -48,3 +48,6 @@ autocmd BufWritePost * GitGutter
 nmap gh <Plug>(GitGutterNextHunk)<CR>zz
 nmap gH <Plug>(GitGutterPrevHunk)<CR>zz
 
+" Fix auto-indentation for YAML files, don't indent comments!
+filetype plugin indent on
+autocmd BufNewFile,BufReadPost * if &filetype == "yaml" | set expandtab shiftwidth=2 indentkeys-=0# | endif
