@@ -85,3 +85,6 @@
 [submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/Vim-Jinja2-Syntax"]
 	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/Vim-Jinja2-Syntax
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "nvim/dotlocal_share_nvim_site_pack_myplugins_start/neovim-fuzzy"]
+	path = nvim/dotlocal_share_nvim_site_pack_myplugins_start/neovim-fuzzy
+	url = https://github.com/cloudhead/neovim-fuzzy.git
