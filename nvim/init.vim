@@ -70,3 +70,4 @@ inoremap <s-tab> <c-n>
 
 " Fuzzy file opener on Ctrl+p
 nnoremap <C-p> :FuzzyOpen<CR>
+nnoremap <C-g> :FuzzyGrep<CR>
