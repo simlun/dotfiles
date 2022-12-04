@@ -6,6 +6,7 @@ move_workspace
 enable_output
 disable_output
 screenshot
+screenshot_full_screen
 screenshot_full_screen_in_3s
 suspend
 brightness
@@ -43,6 +44,10 @@ case "$choice" in
             ;;
         screenshot)
             GRIM_DEFAULT_DIR=$HOME/Pictures grim -g "$(slurp)"
+            ;;
+        screenshot_full_screen)
+            sleep 3
+            GRIM_DEFAULT_DIR=$HOME/Pictures grim
             ;;
         screenshot_full_screen_in_3s)
             sleep 3
