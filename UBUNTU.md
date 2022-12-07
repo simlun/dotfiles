@@ -30,8 +30,8 @@ pyenv:
 ```
 $ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 # apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-$ pyenv install 2.7.18 && pyenv install 3.6.15 && pyenv install 3.7.14 && pyenv install 3.10.5
-$ pyenv global system 2.7.18 3.6.15 3.7.14 3.10.5
+$ pyenv install 3.6.15 && pyenv install 3.7.15
+$ pyenv global system 3.6.15 3.7.15
 ```
 
 pipx:
