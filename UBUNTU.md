@@ -1,6 +1,6 @@
 System:
 ```
-# apt-get install cifs-utils pass build-essential zsh autojump neovim python3-neovim tmux jq silversearcher-ag fzy ripgrep
+# apt-get install cifs-utils pass build-essential zsh autojump neovim python3-neovim tmux jq silversearcher-ag fzy ripgrep python3-dev python3-venv
 ```
 
 dotfiles:
@@ -8,11 +8,14 @@ dotfiles:
 $ git clone git@github.com:simlun/dotfiles.git .dotfiles
 $ cd .dotfiles
 $ make
+$ make nvim
 ```
 
 sway:
 ```
 # apt-get install sway stterm swaylock swayidle wdisplays grimshot brightnessctl pavucontrol xdg-desktop-portal-wlr mako-notifier wl-clipboard qtwayland5 imv slurp grim
+$ cd .dotfiles
+$ make sway
 ```
 
 Configure env variables, then restart Sway (log out+in):
