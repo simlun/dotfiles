@@ -10,10 +10,15 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#test -e /usr/local/bin/virtualenvwrapper.sh && source /usr/local/bin/virtualenvwrapper.sh
 
-# Pipsi
+# brew install pyenv
+if command -v pyenv >/dev/null; then
+    eval "$(pyenv init -)"
+fi
+
+# Pipsi / pipx
 test -e $HOME/.local/bin && export PATH=$HOME/.local/bin:$PATH
 
 # Autojump
