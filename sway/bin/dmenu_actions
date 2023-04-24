@@ -27,6 +27,8 @@ brightnesses=$(cat <<END
 50%
 25%
 10%
+5%
+1%
 END
 )
 
