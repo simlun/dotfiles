@@ -39,3 +39,16 @@ pipx:
 # apt-get install python3-pip python3-venv
 $ python3 -m pip install --user pipx
 ```
+
+syncthing:
+https://apt.syncthing.net/
+```
+$ sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+$ echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+$ sudo apt-get update
+$ sudo apt-get install syncthing
+$ systemctl --user enable syncthing.service
+$ systemctl --user start syncthing.service
+$ open http://127.0.0.1:8384/
+```
+Then set username/password and disable global discovery etc.
