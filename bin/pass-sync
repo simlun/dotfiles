@@ -1,7 +1,10 @@
 #!/bin/bash -ex
 pass git pull
-if test -e $HOME/.password-store/.iphone.git; then
-    pass git pull $HOME/.password-store/.iphone.git
-    pass git push $HOME/.password-store/.iphone.git
+
+# [simlun@simlun-x1 ~]$ git clone --bare .password-store .password-store.iphone.git
+if test -e $HOME/.password-store.iphone.git; then
+    pass git pull $HOME/.password-store.iphone.git
+    pass git push $HOME/.password-store.iphone.git
 fi
+
 pass git push
